@@ -1,0 +1,16 @@
+tasks:
+  - source: scripts/get.py
+    name: get
+    product:
+      nb: products/{{out}}/get.ipynb
+      data: products/{{out}}/get.csv
+
+  - source: scripts/fit.py
+    upstream: ['get','petal-feature','sepal-feature']
+    product:
+      nb: products/{{out}}/fit.ipynb
+      model: products/{{out}}/model.pickle
+
+meta:
+    extract_upstream: False
+    import_tasks_from: features.yaml
