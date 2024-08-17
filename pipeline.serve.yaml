@@ -1,0 +1,21 @@
+meta:
+    extract_upstream: False
+    import_tasks_from: features.yaml
+
+clients:
+  File: clients.get
+
+tasks:
+  - source: scripts/get-new.py
+    name: get
+    product:
+      nb: products/{{out}}/get-new.ipynb
+      data: products/{{out}}/get-new.csv
+
+  - source: scripts/predict.py
+    upstream: ['get','petal-feature','sepal-feature']
+    product:
+      nb: products/{{out}}/predict.ipynb
+      data: products/{{out}}/predict.csv
+    params:
+      model: '{{here}}/products/model.pickle'

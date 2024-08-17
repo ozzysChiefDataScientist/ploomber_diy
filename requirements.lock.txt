@@ -1,0 +1,5 @@
+boto3==1.34.158
+botocore==1.34.158
+pandas==2.2.2
+ploomber==0.23.2
+scikit-learn==1.5.1

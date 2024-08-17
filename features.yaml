@@ -1,0 +1,13 @@
+  - source: scripts/sepal-feature.py
+    name: sepal-feature
+    upstream: ['get']
+    product:
+      nb: products/{{out}}/sepal-feature.ipynb
+      data: products/{{out}}/sepal-feature.csv
+
+  - source: scripts/petal-feature.py
+    name: petal-feature
+    upstream: ['get']
+    product:
+      nb: products/{{out}}/petal-feature.ipynb
+      data: products/{{out}}/petal-feature.csv
